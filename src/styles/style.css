@@ -1,6 +1,7 @@
 :root {
   background: #f3f7fa;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -8,21 +9,38 @@
   font-family: "Open Sans", sans-serif;
 }
 
-h2 {
-  font-size: 26px;
-  color: #4d4f50;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
 h3 {
- color:#98959a;
+  color: #98959a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.wraper {
-  background-color: red;
+a {
+  color: #1f63a8;
+  text-decoration: none;
 }
+
+a:hover{
+    color:#247ed8;
+}
+
+.button.new-transaction{
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.button.new-transaction img{
+    position: relative;
+    margin-right: 5px;
+    margin-top: 2px;
+    top:2px;
+    bottom: 0;
+}
+
+
 .title {
   background: #247ed8;
   text-align: center;
@@ -31,9 +49,16 @@ h3 {
 }
 
 .title h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: 400;
   font-size: 3em;
+}
+
+.title img {
+  margin-right: 10px;
 }
 
 .cards-wrap {
@@ -41,7 +66,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: min(95vw, 900px);
+  width: min(90vw, 800px);
   margin: auto;
   margin-top: -20px;
 }
@@ -68,6 +93,13 @@ h3 {
   line-height: 1.2em;
 }
 
+#total.card {
+  background: #247ed8;
+}
+#total.card h3 {
+  color: #fff;
+}
+
 #incomes span {
   color: #5c8c39;
 }
@@ -75,21 +107,21 @@ h3 {
   color: rgb(212, 123, 108);
 }
 #total span {
-  color: rgb(78, 80, 81);
+  color: #fff;
 }
 
 .transaction-table-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  width: min(95vw, 900px);
-  margin: auto;
+    display: block;
+    overflow-x: auto;
+    text-align: left;
+    width: min(90vw, 800px);
+    margin: auto;
+    margin-top: -20px;
 }
 
 #data-table {
   width: 100%;
-  border-spacing: 0 0.5em;
+  border-spacing: 0 0.9em;
   color: #4d4f50;
 }
 
@@ -108,18 +140,18 @@ table td {
   font-weight: normal;
 }
 
-table thead th{
- font-weight: 600;
+table thead th {
+  font-weight: 600;
 }
 
-table tbody tr{
- font-weight: 400;
- opacity: 0.65;
- text-align: left;
+table tbody tr {
+  font-weight: 400;
+  opacity: 0.65;
+  text-align: left;
 }
 
-table tbody tr:hover{
-    opacity: 1;
+table tbody tr:hover {
+  opacity: 1;
 }
 
 table thead tr th,
@@ -138,19 +170,38 @@ table tbody tr td:last-child {
   border-radius: 0 6px 6px 0;
 }
 
-
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    text-align: center;
+td.income {
+  color: #5c8c39;
 }
 
-.footer p{
-    font-family: "Open Sans", sans-serif;
+td.expense {
+  color: rgb(212, 123, 108);
 }
 
-.footer a{
-    text-align: center;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 4em 0 2em;
+}
+
+.footer p {
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer a {
+  text-align: center;
+}
+
+@media(min-width:800px){
+    html{
+        font-size: 87.5%;
+    }
+    .cards-wrap{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
 }
